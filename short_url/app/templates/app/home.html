@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="content">
+    <div class="hello">
+        {% if request.user.is_authenticated %}
+            <p>Hello {{request.user}}</p>
+        {% endif %}
+    </div>
+    <div class="form">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <h4>Your Long URL</h4>
+        {{form.original_url}}
+            <br>
+        <input type="submit" value="submit" class="submit">
+    </form>
+    </div>
+    <div class="par">
+        <h2>The Original URL Shortener</h2><br>
+        <p>Create shorter URLs with PetiteURL.</p><br><br>
+        <p>Want more out of your link shortener? Track link analytics,<br>
+            use branded domains for fully custom links, and manage<br>
+            your links with our paid plans.</p>
+    </div>
+    {% comment %} {% if request.user.is_authenticated %}
+            <p>{{request.user}}</p>
+        {% endif %} {% endcomment %}
+</div>
+
+{% endblock content %}

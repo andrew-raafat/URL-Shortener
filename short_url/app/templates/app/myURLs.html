@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="url-container">
+    {% for i in list %}
+    <div class="url">
+        <input type="text" value="http://127.0.0.1:8000/{{i.short_url}}" id="{{ forloop.counter }}" style="width:fit-content;"></input>
+        {% comment %} http://127.0.0.1:8000/{{url.original_url}} {% endcomment %}
+        <br>
+        <button class="button" onclick="myFunction2({{ forloop.counter }})" style="width:fit-content;">Copy text</button>
+    </div>
+    {% empty %}
+    <h1>No URLs yet</h1>
+    {% endfor %}
+</div>
+
+{% endblock content %}

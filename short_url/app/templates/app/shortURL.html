@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="content">
+    <div class="form">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <h4> Short url </h4>
+        <div class="output">
+            <input type="text" value="http://127.0.0.1:8000/{{form}}" id="myInput" readonly>
+        </div>
+        <button class="button" onclick="myFunction()">Copy text</button>
+    </form>
+    </div>
+    <div class="par">
+        <h2>The Original URL Shortener</h2><br>
+        <p>Create shorter URLs with PetiteURL.</p><br><br>
+        <p>Want more out of your link shortener? Track link analytics,<br>
+            use branded domains for fully custom links, and manage<br>
+            your links with our paid plans.</p>
+    </div>
+</div>
+
+{% endblock content %}
